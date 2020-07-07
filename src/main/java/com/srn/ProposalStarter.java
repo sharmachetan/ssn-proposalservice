@@ -1,4 +1,4 @@
-package com.srn.login.init;
+package com.srn;
 
 
 
@@ -17,8 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient
 @RestController
 @EnableFeignClients
-@ComponentScan(basePackages ="com.srn" )
-public class LoginStarter{
+@ComponentScan(basePackages = "com.srn")
+public class ProposalStarter {
     //private static final Logger logger = LoggerFactory.getLogger(LoginStarter.class);
 
 //    @RequestMapping("/")
@@ -28,7 +28,7 @@ public class LoginStarter{
 
     public static void main(String[] args){
        // SpringApplicationBuilder(LoginStarter.class).web(true).run(args);\
-        SpringApplication.run(LoginStarter.class, args);
+        SpringApplication.run(ProposalStarter.class, args);
        // logger.info(WELCOME_MESSAGE);
 
 

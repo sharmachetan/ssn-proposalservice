@@ -13,6 +13,8 @@ public class MongoDbClient {
     @Autowired
     MongoImplClient mongoImplClient;
     public  void createProposal(String proposalName){
+
+
         mongoImplClient.createCollection(proposalName);
         log.info( " Trying to create New Proposal ::" + proposalName);
 

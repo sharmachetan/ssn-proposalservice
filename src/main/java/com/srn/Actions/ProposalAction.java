@@ -1,6 +1,9 @@
 package com.srn.Actions;
 
 
+import com.netflix.ribbon.proxy.annotation.Http;
+import feign.Headers;
+import org.json.JSONObject;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,8 +15,8 @@ public interface ProposalAction
 @RequestMapping(name = "findProposal",method = RequestMethod.GET,consumes = "application/json",produces = "application/json",value = "/findProposal/{docId}")
 public Object findProposalDoc(@PathVariable (value = "docId") String docId);
 
-@RequestMapping(name="newProposal",method = RequestMethod.POST, value="/createNewProposal",produces = "application/json" )
-public Object createNewProposalDoc(@RequestBody Object object);
+@RequestMapping(name="newProposal",method = RequestMethod.POST, value="/createNewProposal",produces = "application/json" ,consumes = "application/json")
+public Object createNewProposalDoc(@RequestBody String object);
 
 @RequestMapping(name="updateProposal",method = RequestMethod.POST,value = "/updateProposal")
 public Object updateProposal(@RequestBody Object object);

@@ -98,14 +98,15 @@
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>3.12.2</version>
+			<version>3.11.2</version>
+
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core -->
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongodb-driver-core</artifactId>
-			<version>3.12.2</version>
+	<version>3.12.5</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12 -->
@@ -122,6 +123,35 @@
 			<version>1.18.4</version>
 
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.data</groupId>-->
+<!--			<artifactId>spring-data-mongodb</artifactId>-->
+<!--			<version>2.1.9.RELEASE</version>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.data</groupId>-->
+<!--			<artifactId>spring-data-releasetrain</artifactId>-->
+<!--			<version>2.1.9.RELEASE</version>-->
+<!--&lt;!&ndash;			<type>pom</type>&ndash;&gt;-->
+<!--&lt;!&ndash;			<scope>import</scope>&ndash;&gt;-->
+<!--		</dependency>-->
+
+
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20200518</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>

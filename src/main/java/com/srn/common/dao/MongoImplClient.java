@@ -1,38 +1,50 @@
 package com.srn.common.dao;
 
-import com.mongodb.MongoClient;
-import com.mongodb.ReadConcern;
-import com.mongodb.ReadPreference;
-import com.mongodb.WriteConcern;
+
 import com.mongodb.client.*;
-import com.mongodb.client.model.CreateCollectionOptions;
-import com.mongodb.client.model.CreateViewOptions;
 import com.srn.common.config.MongoConfig;
+import com.srn.common.db.models.DocDescription;
+import com.srn.common.db.repository.ProposalDescRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
 
+/**
+ * This is the dao class interactoing with the database mongo db.
+ *
+ * */
 @Slf4j
 @Component
+@ComponentScan(basePackages = "com.srn")
 public class MongoImplClient implements MongoActionInterface{
 
-    private MongoConfig mongoConfig;
+
+    @Autowired
+    ProposalDescRepository proposalDescRepository;
+
 
 
 
     @Override
     public void createCollection(String collectionName) {
 
+
+       MongoClient mongoClient = MongoClients.create("mongodb://127.0.0.1:27017");
+       MongoDatabase mongoDatabase = mongoClient.getDatabase("postgrad");
+       mongoDatabase.createCollection(collectionName);
+
+       DocDescription docDescription = new DocDescription();
+       docDescription.setContent("This is test");
+       docDescription.setId("124");
+        proposalDescRepository.save(docDescription);
+
         try {
-            mongoConfig = MongoConfig.getInstance();
-            MongoClient mongoClient = mongoConfig.getMongoClient();
-            MongoDatabase mongoDatabase = mongoClient.getDatabase("postgrad");
-            mongoDatabase.createCollection(collectionName);
-            log.info(" Trying to create Collection : " + collectionName);
-        }catch(Exception e){
-            e.printStackTrace();
-        }
+
+    }catch (Exception e ){
+        e.printStackTrace();}
     }
 
     @Override
