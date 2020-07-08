@@ -36,16 +36,11 @@ public class ProposalController implements ProposalAction {
         JSONObject jsonObject = new JSONObject(object.toString());
         log.info("Request in json format " + jsonObject.toString());
 
-        mongoDbClient.createProposal(jsonObject.getString("name"));
+        mongoDbClient.createProposal(jsonObject);
 
         return null;
     }
-//
-//    @Override
-//    public Object createNewProposalDoc() {
-//
-//        return null;
-//    }
+
 
     @Override
     public Object updateProposal(Object object) {
@@ -62,10 +57,5 @@ public class ProposalController implements ProposalAction {
         return null;
     }
 
-//    @Override
-//    public String UpdateProposalStatus() {
-//        return null;
-//    }
-//
 
 }

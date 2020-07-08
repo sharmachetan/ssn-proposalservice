@@ -2,6 +2,7 @@ package com.srn.common.bp;
 
 import com.srn.common.dao.MongoImplClient;
 import lombok.extern.slf4j.Slf4j;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ public class MongoDbClient {
 
     @Autowired
     MongoImplClient mongoImplClient;
-    public  void createProposal(String proposalName){
+    public  void createProposal(JSONObject proposalName){
 
 
         mongoImplClient.createCollection(proposalName);

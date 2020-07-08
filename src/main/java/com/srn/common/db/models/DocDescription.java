@@ -7,10 +7,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Component;
 
 @Document(value="description")
-@Component
 @Getter
 @Setter
-public class DocDescription {
+public class DocDescription extends org.bson.Document {
     @Id
     String id;
     String content;
